@@ -21,10 +21,16 @@ public class Game {
         strings[2] = "-";
         strings[3] = "-";
         strings[4] = "-";
-        int K =4;
+
         int M = 0;
-        String[] secondString = swap(strings,K,M);
-        for (int i = 0; i < strings.length; i++)
-            System.out.print(secondString[i] + " ");
+        for (int k = 0; k < strings.length - 1; k++) {
+            M++;
+            String[] secondString = swap(strings, k, M);
+            for (int i = 0; i < secondString.length; i++)
+                System.out.print(secondString[i] + " ");
+            System.out.println("\n");
+        }
+
     }
+
 }
