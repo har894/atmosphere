@@ -3,63 +3,65 @@ import java.util.Scanner;
 public class Learning_qtl {
     public static void main(String[] args) {
 
-        char mapStructure;
+        String text = "Give direction [f or b]:_";
+        String successText = "CONGRATULATIONS YOU'VE WON!";
+        String failText="you've lost, start again.";
+        String unknownErrorText = "something went wrong";
+        String moveForward="f";
+        String moveBack="b";
 
-        //map fields
-        int mapLength;
         char[] map;
-        mapLength = 30;
+        int startPoint;
+        startPoint = 0;
+        char mapStructure = '-';
+        int mapLength=10;
+        char snakeStructure= '*';
+        int snakeLength= 1;
 
-        mapStructure = '-';
+       //init map
         map = new char[mapLength];
         for (int i = 0; i < mapLength; i++) {
             map[i] = mapStructure;
         }
 
-        //snake fields
-        char snakeStructure;
-        snakeStructure = '*';
-        int snakeLength;
-        snakeLength = 6;
-        int snakeStartIndex;
-        snakeStartIndex = 0;
+        //snake head and tail
+        int snakeStartIndex = startPoint;
         int snakeEndIndex = snakeStartIndex + snakeLength;
 
-        //place snake
-        int startPoint;
-        startPoint = 0;
+        //place the snake on the map
         for (int i = startPoint; i < startPoint + snakeLength; i++) {
             map[i] = snakeStructure;
         }
         System.out.println(map);
 
-        while (map[mapLength - 1] == '-') {
+
+        while (map[mapLength - 1] == mapStructure) {
             Scanner scan = new Scanner(System.in);
             String direction;
             do {
-                System.out.println("give direction");
+                System.out.println(text);
                 direction = scan.next().toLowerCase();
 
-            } while (!direction.contentEquals("f") & !direction.contentEquals("b"));
+            } while (!direction.contentEquals(moveForward) & !direction.contentEquals(moveBack));
 
 
-            if (direction.contentEquals("f")) {
+            if (direction.contentEquals(moveForward)) {
                 map[snakeStartIndex++] = mapStructure;
                 map[snakeEndIndex++] = snakeStructure;
                 System.out.println(map);
                 if (map[mapLength - 1] == snakeStructure) {
-                    System.out.println("CONGRATULATIONS YOU'VE WON");
+                    System.out.println(successText);
                 }
-            } else if (direction.contentEquals("b")) {
-                map[snakeEndIndex--] = mapStructure;
+            } else if (direction.contentEquals(moveBack)) {
                 map[snakeStartIndex--] = snakeStructure;
+                map[snakeEndIndex--] = mapStructure;
+                System.out.println(map);
                 if (map[startPoint] == snakeStructure) {
-                    System.out.println("you've lost, start again.");
+                    System.out.println(failText);
                     break;
                 }
-                System.out.println(map);
             } else {
-                System.out.println("something went wrong");
+                System.out.println(unknownErrorText);
             }
         }
     }
