@@ -11,7 +11,7 @@ public class Learning_qtl {
 
 
         char[] map;
-        int startPoint = 5;
+        int startPoint = 0;
         char mapStructure = '-';
         int mapLength = 30;
         char snakeStructure = '*';
