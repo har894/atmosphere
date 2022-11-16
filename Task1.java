@@ -1,4 +1,4 @@
-public class Game {
+public class Task1 {
     public static void main(String[] args) {
 
         Field gameField = new Field(10, '-');
