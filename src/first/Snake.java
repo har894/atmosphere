@@ -1,7 +1,19 @@
+package first;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+
 public class Snake {
 
+    private static Logger logger = LogManager.getLogger(Snake.class.getName());
     public static void main(String[] args) throws InterruptedException {
 
+        //BasicConfigurator.configure();
+        DOMConfigurator.configure("log4j.xml");
+
+        logger.info("Info");
+        logger.error("Error");
         char[] charArray = new char[10];
 
         for(int i = 0; i < 10; i++) {
@@ -30,5 +42,6 @@ public class Snake {
             Thread.sleep(200);
             System.out.println(charArray);
         }
+        logger.debug("Finish");
     }
 }
