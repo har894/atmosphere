@@ -27,27 +27,20 @@ public class SnakeGameMain {
         char[] gameSnakes = snake.crateSnake(lengthOfSnake, snakeSymbol);
         int mapLength = gameMap.length;
 
-        char[] game = new char[mapLength];
-
-        int count = 0;
-        for (char element : gameMap) {
-            game[count] = element;
-            count++;
-        }
+        CreateNewMap createNewMap = new CreateNewMap();
 
         System.out.println("Please enter the item index for snake: ");
         int index = scanner.nextInt();
-        for (char element : gameSnakes) {
-                game[index] = element;
-                index++;
-        }
+        char[] newMap =createNewMap.createNewMap(gameMap,mapLength,gameSnakes,index);
+
 
         Print print = new Print();
         print.printMap(gameMap);
         System.out.println("\n");
         print.printMap(gameSnakes);
         System.out.println("\n");
-        print.printMap(game);
+        print.printMap(newMap);
 
     }
+
 }
