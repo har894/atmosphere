@@ -98,16 +98,16 @@ public class Snack {
     public static void main(String[] args) {
 
 
-        Map<String, Integer> allInfoOfFile = new HashMap<>();
+        Map<String, Integer> allInformationOfConfigFile = new HashMap<>();
 
         List<String> list = readFileInList("/Users/vazgenlevonyan/Desktop/vord/atmosphere/java/snack/config.txt");
 
         for (int i = 0; i < list.size(); i++) {
-            allInfoOfFile.put((list.get(i).substring(0, list.get(i).indexOf('='))), Integer.valueOf(list.get(i).substring(list.get(i).lastIndexOf("=") + 1)));
+            allInformationOfConfigFile.put((list.get(i).substring(0, list.get(i).indexOf('='))), Integer.valueOf(list.get(i).substring(list.get(i).lastIndexOf("=") + 1)));
         }
 
-        Integer mapSize = allInfoOfFile.get("mapSize");
-        Integer snackSize= allInfoOfFile.get("snackSize");
+        Integer mapSize = allInformationOfConfigFile.get("mapSize");
+        Integer snackSize= allInformationOfConfigFile.get("snackSize");
 
         char[] emptyMap = createEmptyMap(mapSize);
         printMap(emptyMap);
@@ -116,7 +116,7 @@ public class Snack {
         char[] snackInMap = insertSnackInMap(emptyMap, snack, 7);
         printMap(snackInMap);
         System.out.println();
-        
+
         while (true) {
             System.out.println();
             System.out.println("Please input 'b' or 'f'");
