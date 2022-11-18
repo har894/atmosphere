@@ -1,0 +1,2 @@
+mapSize=10
+snackSize=3

@@ -1,4 +1,8 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class Snack {
 
@@ -79,11 +83,31 @@ public class Snack {
         }
     }
 
+    public static List<String> readFileInList(String fileName) {
+        List<String> lines = Collections.emptyList();
+        try {
+            lines =
+                    Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lines;
+    }
+
 
     public static void main(String[] args) {
 
-        int mapSize = 10;
-        int snackSize = 3;
+
+        Map<String, Integer> allInfoOfFile = new HashMap<>();
+
+        List<String> list = readFileInList("/Users/vazgenlevonyan/Desktop/vord/atmosphere/java/snack/config.txt");
+
+        for (int i = 0; i < list.size(); i++) {
+            allInfoOfFile.put((list.get(i).substring(0, list.get(i).indexOf('='))), Integer.valueOf(list.get(i).substring(list.get(i).lastIndexOf("=") + 1)));
+        }
+
+        Integer mapSize = allInfoOfFile.get("mapSize");
+        Integer snackSize= allInfoOfFile.get("snackSize");
 
         char[] emptyMap = createEmptyMap(mapSize);
         printMap(emptyMap);
@@ -92,6 +116,7 @@ public class Snack {
         char[] snackInMap = insertSnackInMap(emptyMap, snack, 7);
         printMap(snackInMap);
         System.out.println();
+        
         while (true) {
             System.out.println();
             System.out.println("Please input 'b' or 'f'");
