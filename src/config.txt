@@ -1,0 +1,3 @@
+Map length =:15
+Snake length =:3
+"current position" =:0
