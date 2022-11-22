@@ -1,8 +1,10 @@
+import java.util.Properties;
+
 public class Task1 {
     public static void main(String[] args) {
 
-        Field gameField = new Field(10, '-');
-        Snake playerSnake = new Snake(3, '*');
+        Field gameField = Field.getFieldFromProperties();
+        Snake playerSnake = Snake.getSnakeFromProperties();
         long startTime = System.nanoTime();
         gameField.play(playerSnake);
         long endTime   = System.nanoTime();
