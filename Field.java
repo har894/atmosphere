@@ -1,11 +1,20 @@
+import java.util.Properties;
+
 public class Field {
 
     private final String field;
 
     private int snakeHeadPosition = 0;
 
-    public Field(int length, char fieldDesign) {
-        field = String.format("%0" + length + "d", 0).replace('0', fieldDesign);
+    public Field(int length, String fieldDesign) {
+        field = String.format("%0" + length + "d", 0).replace("0", fieldDesign);
+    }
+
+    public static Field getFieldFromProperties() {
+        Properties properties = ConfigReader.readProperty("resources/game.cfg");
+        int fieldLength = Integer.parseInt(properties.getProperty("fieldLength"));
+        String fieldDesign = properties.getProperty("fieldDesign");
+        return new Field(fieldLength, fieldDesign);
     }
 
     public void play(Snake snake) {
