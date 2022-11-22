@@ -1,0 +1,7 @@
+board=20
+snake=3
+right=d
+left=a
+c=c
+warning=Press only ( A ) for left and ( D ) for right
+turnedOff=Game turned off!
