@@ -1,4 +1,4 @@
-package src.das.snake;
+package snakeWithConfigFile.snakes;
 
 public class Print {
 

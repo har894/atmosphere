@@ -1,7 +1,6 @@
-package src.das.snakeWithConfigFile.snake;
+package snakeWithConfigFile.snakes;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class Map<C, I extends Number> {
 

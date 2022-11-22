@@ -1,4 +1,4 @@
-package src.das.snake;
+package snake;
 
 import java.util.Scanner;
 

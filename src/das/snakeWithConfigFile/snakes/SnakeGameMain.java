@@ -1,4 +1,4 @@
-package src.das.snakeWithConfigFile.snake;
+package snakeWithConfigFile.snakes;
 
 
 import java.util.*;

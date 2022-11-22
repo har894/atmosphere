@@ -1,4 +1,4 @@
-package src.das.snake;
+package snake;
 
 public class CreateNewMap {
 

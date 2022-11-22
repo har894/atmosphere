@@ -1,4 +1,4 @@
-package src.das;
+package das.src.das;
 
 import java.util.Arrays;
 import java.util.Scanner;

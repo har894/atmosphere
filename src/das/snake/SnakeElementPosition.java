@@ -1,4 +1,4 @@
-package src.das.snakeWithConfigFile.snake;
+package snake;
 
 public class SnakeElementPosition {
 

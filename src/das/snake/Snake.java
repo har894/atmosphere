@@ -1,4 +1,4 @@
-package src.das.snakeWithConfigFile.snake;
+package snake;
 
 import java.util.Arrays;
 
