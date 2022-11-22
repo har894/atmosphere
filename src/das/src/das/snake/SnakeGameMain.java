@@ -1,4 +1,4 @@
-package src.das;
+package src.das.snake;
 
 import java.util.Scanner;
 
@@ -31,15 +31,23 @@ public class SnakeGameMain {
 
         System.out.println("Please enter the item index for snake: ");
         int index = scanner.nextInt();
-        char[] newMap =createNewMap.createNewMap(gameMap,mapLength,gameSnakes,index);
-
-
+        char[] newMap = createNewMap.createNewMap(gameMap, mapLength, gameSnakes, index);
         Print print = new Print();
         print.printMap(gameMap);
         System.out.println("\n");
         print.printMap(gameSnakes);
         System.out.println("\n");
-        print.printMap(newMap);
+
+        while (true) {
+            MoveSnake moveSnake = new MoveSnake();
+            System.out.println("Please enter the f or d: ");
+            String direction = scanner.next();
+            moveSnake.moveSnackOnMap(newMap, direction, lengthOfSnake);
+
+            print.printMap(newMap);
+            System.out.println("\n");
+
+        }
 
     }
 
