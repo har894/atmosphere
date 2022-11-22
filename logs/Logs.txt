@@ -1,0 +1,5 @@
+2022-11-23T00:30:38.444005---Task1: Created field, with default parameters
+2022-11-23T00:30:38.561262---Task1: Created snake, with default parameters
+2022-11-23T00:30:38.561532---Task1: Started game
+2022-11-23T00:30:38.562010---Task1: Finished gamed
+2022-11-23T00:30:38.639953---Task1: Calculated time of execution: 594958
