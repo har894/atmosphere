@@ -54,6 +54,7 @@ public class Field {
         switch (direction) {
             case "f":
                 if (snakeHeadPosition == field.length() + snakeLength - 2) {
+                    LogWriter.write("Field.move(): The snake will be out of the field!!!");
                     System.out.println("The snake will be out of the field!!!");
                 } else {
                     ++snakeHeadPosition;
@@ -61,6 +62,7 @@ public class Field {
                 break;
             case "b":
                 if (snakeHeadPosition == 0) {
+                    LogWriter.write("Field.move(): The snake will be out of the field!!!");
                     System.out.println("The snake will be out of the field!!!");
                 } else {
                     --snakeHeadPosition;
@@ -70,5 +72,6 @@ public class Field {
                 break;
         }
         replace(snake);
+        LogWriter.write("Field.move(): Replaced snake's position");
     }
 }
