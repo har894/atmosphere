@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MethodsForSnake {
     public static int map() {
-        int map = 15;
+        int map = 20;
         return map;
     }
 
