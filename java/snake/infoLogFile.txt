@@ -1,0 +1,2 @@
+Nov 23, 2022 12:15:18 PM Main main
+INFO: Game is started
