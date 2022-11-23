@@ -6,11 +6,11 @@ import java.util.*;
 
 public class Snack {
 
-    private static char[] createEmptyMap(int mapLength) {
+    private static char[] createEmptyMap(int mapLength, String symbolOfMap) {
         char[] map = new char[mapLength];
 
         for (int i = 0; i < mapLength; i++) {
-            map[i] = '-';
+            map[i] = symbolOfMap.charAt(0);
         }
         return map;
     }
@@ -22,11 +22,11 @@ public class Snack {
         }
     }
 
-    private static char[] createSnack(int length) {
+    private static char[] createSnack(int length, String symbolOfSnack) {
 
         char[] snack = new char[length];
         for (int i = 0; i < length; i++) {
-            snack[i] = '*';
+            snack[i] = symbolOfSnack.charAt(0);
         }
         return snack;
     }
@@ -98,21 +98,22 @@ public class Snack {
     public static void main(String[] args) {
 
 
-        Map<String, Integer> allInformationOfConfigFile = new HashMap<>();
+        Map<String, Object> allInformationOfConfigFile = new HashMap<>();
 
         List<String> list = readFileInList("/Users/vazgenlevonyan/Desktop/vord/atmosphere/java/snack/config.txt");
 
         for (int i = 0; i < list.size(); i++) {
-            allInformationOfConfigFile.put((list.get(i).substring(0, list.get(i).indexOf('='))), Integer.valueOf(list.get(i).substring(list.get(i).lastIndexOf("=") + 1)));
+            allInformationOfConfigFile.put((list.get(i).substring(0, list.get(i).indexOf('='))), (list.get(i).substring(list.get(i).lastIndexOf("=") + 1)));
         }
 
-        Integer mapSize = allInformationOfConfigFile.get("mapSize");
-        Integer snackSize= allInformationOfConfigFile.get("snackSize");
-
-        char[] emptyMap = createEmptyMap(mapSize);
+        Integer mapSize = Integer.valueOf((String) (allInformationOfConfigFile.get("mapSize")));
+        Integer snackSize = Integer.valueOf((String) (allInformationOfConfigFile.get("snackSize")));
+        String symbolOfMap = (String) allInformationOfConfigFile.get("symbolOfMap");
+        String symbolOfSnack = (String) allInformationOfConfigFile.get("symbolOfSnack");
+        char[] emptyMap = createEmptyMap(mapSize, symbolOfMap);
         printMap(emptyMap);
         System.out.println();
-        char[] snack = createSnack(snackSize);
+        char[] snack = createSnack(snackSize, symbolOfSnack);
         char[] snackInMap = insertSnackInMap(emptyMap, snack, 7);
         printMap(snackInMap);
         System.out.println();

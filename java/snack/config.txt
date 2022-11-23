@@ -1,2 +1,4 @@
 mapSize=10
 snackSize=3
+symbolOfMap=-
+symbolOfSnack=*
