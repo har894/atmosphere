@@ -1,25 +1,41 @@
 package snakeWithConfigFile.snakes;
 
 
+import java.io.IOException;
 import java.util.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 
 public class SnakeGameMain {
 
-    public static void main(String[] args){
+    private static final Logger LOGGER = Logger.getLogger("InfoLogging");
+
+    public static void main(String[] args) throws IOException {
+        FileHandler fh;
+        fh = new FileHandler("/Users/arammkhitaryan/Desktop/snack/atmosphere/src/das/snakeWithConfigFile/snakes/logger.text");
+        LOGGER.addHandler(fh);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
+        LOGGER.info("Game is started");
+        // the following statement is used to log any messages
 
         ReadFileIntoList readFileIntoList = new ReadFileIntoList();
-        List<String> listOfConfigWithIntegerValue = readFileIntoList.readFileInList("/Users/arammkhitaryan/Desktop/sms/atmosphere/src/das/src/das/snakeWithConfigFile/snake/configForIntegerValue.text");
+        List<String> listOfConfigWithIntegerValue = readFileIntoList.readFileInList("/Users/arammkhitaryan/Desktop/snack/atmosphere/src/das/snakeWithConfigFile/snakes/configForIntegerValue.text");
 
-        List<String> listOfConfigWithStringValue = readFileIntoList.readFileInList("/Users/arammkhitaryan/Desktop/sms/atmosphere/src/das/src/das/snakeWithConfigFile/snake/configForStringValue.text");
+        List<String> listOfConfigWithStringValue = readFileIntoList.readFileInList("/Users/arammkhitaryan/Desktop/snack/atmosphere/src/das/snakeWithConfigFile/snakes/configForStringValue.text");
 
         HashMap<String, Integer> stringIntegerHashMap = new HashMap<>();
         HashMap<String, String> stringStringHashMap = new HashMap<>();
         for (int i = 0; i < listOfConfigWithIntegerValue.size(); i++) {
+            LOGGER.log( Level.FINE, "processing {0} entries in loop", listOfConfigWithIntegerValue.size() );
             stringIntegerHashMap.put((listOfConfigWithIntegerValue.get(i).substring(0, listOfConfigWithIntegerValue.get(i).indexOf(':'))), Integer.valueOf(listOfConfigWithIntegerValue.get(i).substring(listOfConfigWithIntegerValue.get(i).lastIndexOf(":") + 1)));
         }
 
         for (int i = 0; i < listOfConfigWithStringValue.size(); i++) {
+            LOGGER.log( Level.FINE, "processing {0} entries in loop", listOfConfigWithStringValue.size() );
             stringStringHashMap.put((listOfConfigWithStringValue.get(i).substring(0, listOfConfigWithStringValue.get(i).indexOf(':'))), listOfConfigWithStringValue.get(i).substring(listOfConfigWithStringValue.get(i).lastIndexOf(":") + 1));
         }
         Integer lengthOfMap = stringIntegerHashMap.get("lengthOfMap");
@@ -54,7 +70,7 @@ public class SnakeGameMain {
 
         while (value) {
             MoveSnake moveSnake = new MoveSnake();
-            System.out.println("Please enter the f or d: ");
+            System.err.println("Please enter the f or d: ");
             String direction = scanner.next();
             moveSnake.moveSnackOnMap(newMap, direction, lengthOfSnake);
 
