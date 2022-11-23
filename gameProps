@@ -1,0 +1,5 @@
+startPoint=0
+snakeLength=3
+snakeStructure=*
+mapLength=30
+mapStructure=,
