@@ -16,6 +16,7 @@ public class LogWriter {
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(concatenated);
             bufferedWriter.close();
+            System.out.println(concatenated);
         } catch (IOException exception) {
             System.out.println("Could not write in file");
         }
