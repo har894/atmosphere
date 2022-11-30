@@ -1,6 +1,12 @@
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+
 import java.util.Scanner;
 
 public class Snack {
+
+    private static Logger logger = LogManager.getLogger(Snack.class.getName());
 
     private static char[] createEmptyMap(int mapLength) {
         char[] map = new char[mapLength];
@@ -72,15 +78,21 @@ public class Snack {
     private static void moveSnackOnMap(char[] map, String direction, int snackLength) {
         if (direction.equals("f")) {
             moveSnackOneStepToForward(map, snackLength);
+            logger.info("'f' is selected");
         } else if (direction.equals("b")) {
             moveSnackOneStepToBackward(map, snackLength);
+            logger.info("'b' is selected");
         } else {
+            logger.info("None of f and g has been selected");
             return;
         }
     }
 
 
     public static void main(String[] args) {
+
+        //BasicConfigurator.configure();
+        DOMConfigurator.configure("log4j.xml");
 
         int mapSize = 10;
         int snackSize = 3;
