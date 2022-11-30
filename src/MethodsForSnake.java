@@ -23,13 +23,13 @@ public class MethodsForSnake {
         int move = 0;
         if (direction.equals("f")) {
             move = +1;
-            Logger.log("\nSnake moved right");
+            MyLogger.log("Snake moved right");
         } else if (direction.equals("b")) {
             move = -1;
-            Logger.log("\nSnake moved left");
+            MyLogger.log("Snake moved left");
         } else {
             System.out.println("Please type valid command");
-            Logger.log("\nSnake didn't move");
+            MyLogger.log("Snake didn't move");
         }
         return move;
     }
@@ -39,10 +39,10 @@ public class MethodsForSnake {
         int snake = snake();
         if (current < (map - snake)) {
             System.out.println("Sorry, you lose");
-            Logger.log("Player lost the game");
+            MyLogger.log("Player lost the game");
         } else if (current > (map - snake)) {
             System.out.println("Congrats, you WIN");
-            Logger.log("Player won the game");
+            MyLogger.log("Player won the game");
         }
     }
 }

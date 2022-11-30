@@ -6,7 +6,7 @@ public class SnakeBegins {
     public static void main(String[] args) throws IOException {
         //some code
         System.out.println("Game is starting...\n press <f> to forward, <b> to backward");
-        Logger.log("Game starts");
+        MyLogger.log("Game starts");
         int current = MethodsForSnake.startPosition();
         int map = MethodsForSnake.map();
         int snake = MethodsForSnake.snake();

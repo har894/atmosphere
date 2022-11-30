@@ -1,1 +1,35 @@
-Player lost the game
+
+2022-11-30T16:49:49.705809 - Game starts
+2022-11-30T16:50:07.977072 - Snake moved right
+2022-11-30T16:50:09.433192 - Snake moved right
+2022-11-30T16:50:10.347314 - Snake moved right
+2022-11-30T16:50:11.885771 - Snake moved left
+2022-11-30T16:50:12.460716 - Snake moved left
+2022-11-30T16:50:12.990023 - Snake moved left
+2022-11-30T16:50:15.891832 - Snake moved left
+2022-11-30T16:50:15.902522 - Player lost the game
+2022-11-30T16:50:26.919310 - Game starts
+2022-11-30T16:50:31.552896 - Snake moved right
+2022-11-30T16:50:32.466866 - Snake moved right
+2022-11-30T16:50:32.935198 - Snake moved right
+2022-11-30T16:50:44.094200 - Snake moved left
+2022-11-30T16:50:55.849409 - Snake moved right
+2022-11-30T16:50:55.946392 - Snake moved right
+2022-11-30T16:50:56.129081 - Snake moved right
+2022-11-30T16:50:56.356420 - Snake moved right
+2022-11-30T16:50:56.561795 - Snake moved right
+2022-11-30T16:50:56.807849 - Snake moved right
+2022-11-30T16:50:57.108060 - Snake moved right
+2022-11-30T16:50:57.520232 - Snake moved right
+2022-11-30T16:50:58.415080 - Snake moved right
+2022-11-30T16:51:07.807594 - Snake didn't move
+2022-11-30T16:51:17.504677 - Snake didn't move
+2022-11-30T16:51:18.556133 - Snake didn't move
+2022-11-30T16:51:19.705981 - Snake didn't move
+2022-11-30T16:51:20.461686 - Snake didn't move
+2022-11-30T16:51:22.694861 - Snake moved right
+2022-11-30T16:51:41.718920 - Snake didn't move
+2022-11-30T16:51:56.292608 - Snake moved right
+2022-11-30T16:51:56.304175 - Player won the game
+INFO : 2022-11-30T16:52:27.461760 - Game starts
+INFO : 2022-11-30T16:52:35.685622 - Snake moved right
