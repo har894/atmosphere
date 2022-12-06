@@ -9,7 +9,7 @@ public class ParzTiveGtnel {
         int count=0;
 //option 1.0
        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a number you want");
+        System.out.println("Please enter a number");
         number= scanner.nextInt();
         for(int i=2;i<=number/2;i++){
             if (number%2==0){
