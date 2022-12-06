@@ -7,7 +7,7 @@ public class ParzTiveGtnel {
     public static void main(String[] args) {
         int number;
         int count=0;
-//option 1
+//option 1.0
        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a number you want");
         number= scanner.nextInt();
@@ -24,7 +24,7 @@ public class ParzTiveGtnel {
             System.out.println(number+" Is not Prime");
         }
 
-        //Option 2
+        //Option 2.0
         for (int i=2;i<=100;i++){
             for (int j=2;j<=i;j++){
                 if (j==i){
